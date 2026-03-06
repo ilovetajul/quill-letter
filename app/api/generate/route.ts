@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     const { applicationType, subject, applicantInfo, recipientInfo, additionalContext, language, tone } = body;
 
     const genAI = new GoogleGenerativeAI(geminiApiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = `
 You are an expert Principal Letter Writer. Write a highly professional application letter based on the following details.
