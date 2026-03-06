@@ -45,11 +45,11 @@ export async function POST(request) {
 
     return NextResponse.json({ letter });
 
-  } catch (error) {
-    console.error("Gemini API Error:", error.message || error);
-    return NextResponse.json(
-      { error: "Failed to generate letter. Please try again." }, 
-      { status: 500 }
-    );
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error("[Quill API] Full error:", msg);
+    return NextResponse.json({ 
+      error: msg 
+    }, { status: 500 });
   }
 }
