@@ -19,7 +19,7 @@ export async function POST(request) {
 
     // Google Gemini ইনিশিয়ালাইজ করা
     const genAI = new GoogleGenerativeAI(geminiApiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     // এআই-এর জন্য প্রফেশনাল প্রম্পট তৈরি করা
     const prompt = `
